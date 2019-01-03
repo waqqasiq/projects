@@ -1,5 +1,5 @@
 # Student/University Management System
-A fully responsive live website created to complete the TOPUP IT Web Development Training. The project was hosted at demo5f.lictproject.com, a domain provided by  LICT for a 3-month period starting from March 2018. To see a demo of the project, go to [this](https://www.youtube.com) link.
+A fully responsive live website created to complete the TOPUP IT Web Development Training. The project was hosted at demo5f.lictproject.com, a domain provided by  LICT for a 3-month period starting from March 2018. To see a demo of the project, go to [this](https://youtu.be/GZ-s7MA6fEI) link to see the functions of an admin and then watch [this](https://youtu.be/b6oVCd2zHKQ) video for the user view.
 
 ### What the project is about?
 - Database holds information about admins, students, courses, subjects, notices and other.
