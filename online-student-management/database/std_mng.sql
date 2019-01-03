@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.8.4
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 13, 2018 at 07:30 AM
--- Server version: 10.1.16-MariaDB
--- PHP Version: 5.6.24
+-- Generation Time: Jan 03, 2019 at 07:00 AM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -41,10 +43,8 @@ CREATE TABLE `a` (
 INSERT INTO `a` (`id`, `name`, `email`, `phno`, `password`) VALUES
 (9, 'Tanvir Hossain', 'hossain@gmail.com', '01723232323', '1111'),
 (12, 'Shamsul Kaonain', 'kaonain@gmail.com', '', '3333'),
-(18, 'Waas', 'waas@live.com', '0123331232', '123'),
 (19, 'shaily', 'shaily@gmail.com', '', '123'),
 (20, 'Nadib', 'nadibro@gmail.com', '01622222233', '0987'),
-(23, 'qwerty', 'qwerty@gmail.com', '32124123123', ''),
 (24, 'Shawmik', 'shumi@gmail.com', '1234', '321321');
 
 -- --------------------------------------------------------
@@ -86,9 +86,7 @@ INSERT INTO `admin` (`adminid`, `name`, `email`, `password`) VALUES
 (1, 'Seaum', 'seaum@gmail.com', '1111'),
 (4, 'Mohibul', 'bull@gmail.com', '2222'),
 (5, 'Musta', 'motalebu@', '3333'),
-(7, 'Sabuj', 'sabuj@', '5555'),
-(24, 'waqqas', 'waqqas.ess@gmail.com', '24412'),
-(27, 'idk', 'idk@gmail.com', '321');
+(24, 'waqqas', 'waqqas@gmail.com', '24412');
 
 -- --------------------------------------------------------
 
@@ -201,7 +199,8 @@ INSERT INTO `notice` (`nid`, `topic`, `content`, `curtime`) VALUES
 (2, 'Important Announcement Regarding Usis Server Cluster Shutdown', 'Please be notified that prior to our Pre-advising session starting from Friday, 16th March, 2018, there is need for server maintenance of the USIS cluster for the purpose of optimization. This shut down will start from Midnight 12:01 am, Thursday, 15th. March, 2018 till 6:00 am Thursday, March 15, 2018. After 6:00 am Thursday the cluster will function as normal. Again on Friday, 16, Midnight 12:01 am the cluster will be shut down and continue till Friday 6:00 am. After this the USIS shall be ready for the pre-advising session and operate as normal.', '2018-03-23 05:39:36'),
 (4, 'Final Examinations seat plan, Spring 2018', 'Final exam will be help between 8th April to 17th of April, 2018. Your cooperation is highly appreciated.', '2018-04-12 03:51:28'),
 (11, 'Farewell to the Brilliant mind', 'We mourn the death of Stephen Hawking.', '2018-04-12 03:50:47'),
-(13, 'Reminiscing JN Islam', 'Jamal Nazrul Islam was a superior human being as described by Dr Badrul Alam Majumdar.', '2018-04-12 06:58:33');
+(13, 'Reminiscing JN Islam', 'Jamal Nazrul Islam was a superior human being as described by Dr Badrul Alam Majumdar.', '2018-04-12 06:58:33'),
+(21, 'Fall 2018 Admission Going on', 'Undergraduate entrance exams are going to be held on 4th September 2018. ', '2019-01-02 20:16:16');
 
 -- --------------------------------------------------------
 
@@ -358,41 +357,49 @@ ALTER TABLE `subject`
 --
 ALTER TABLE `a`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
 --
 -- AUTO_INCREMENT for table `about`
 --
 ALTER TABLE `about`
   MODIFY `aboutid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
   MODIFY `adminid` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
 --
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
   MODIFY `coId` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
 --
 -- AUTO_INCREMENT for table `contact_reply`
 --
 ALTER TABLE `contact_reply`
   MODIFY `rplyid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
 --
 -- AUTO_INCREMENT for table `notice`
 --
 ALTER TABLE `notice`
-  MODIFY `nid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `nid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
 --
 -- AUTO_INCREMENT for table `personal_info`
 --
 ALTER TABLE `personal_info`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
 --
 -- AUTO_INCREMENT for table `routine`
 --
 ALTER TABLE `routine`
   MODIFY `rt_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
 --
 -- Constraints for dumped tables
 --
@@ -402,6 +409,7 @@ ALTER TABLE `routine`
 --
 ALTER TABLE `subject`
   ADD CONSTRAINT `dept_id` FOREIGN KEY (`dept_id`) REFERENCES `department` (`dept_id`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
